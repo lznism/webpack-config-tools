@@ -16,6 +16,11 @@ const getVueLoaderCfg = () => {
 							options: {
 								minimize: true
 							}
+						}, {
+							loader: 'postcss-loader', 
+							options: {
+								sourceMap: true
+							}
 						}],
 						fallback: 'vue-style-loader'
 					}),
@@ -25,7 +30,12 @@ const getVueLoaderCfg = () => {
 							options: {
 								minimize: true
 							}
-						}, 'style-loader'],
+						}, 'style-loader', {
+							loader: 'postcss-loader', 
+							options: {
+								sourceMap: true
+							}
+						}],
 						fallback: 'vue-style-loader'
 					})
 				}
@@ -36,8 +46,18 @@ const getVueLoaderCfg = () => {
 			loader: 'vue-loader',
 			options: {
 				loaders: {
-					css: ['vue-style-loader', 'css-loader'],
-					scss: ['vue-style-loader', 'css-loader', 'sass-loader']
+					css: ['vue-style-loader', 'css-loader', {
+						loader: 'postcss-loader', 
+						options: {
+							sourceMap: true
+						}
+					}],
+					scss: ['vue-style-loader', 'css-loader', 'sass-loader', {
+						loader: 'postcss-loader', 
+						options: {
+							sourceMap: true
+						}
+					}]
 				}
 			}
 		};
@@ -54,10 +74,20 @@ const getCSSLoader = () => {
 				options: {
 					minimize: true
 				}
+			}, {
+				loader: 'postcss-loader', 
+				options: {
+					sourceMap: true
+				}
 			}]
 		});
 	} else {
-		return ['style-loader', 'css-loader'];
+		return ['style-loader', 'css-loader', {
+			loader: 'postcss-loader', 
+			options: {
+				sourceMap: true
+			}
+		}];
 	}
 }
 
@@ -71,10 +101,20 @@ const getSCSSLoader = () => {
 					minimize: true
 				}
 			}, 
-			'sass-loader']
+			'sass-loader', {
+				loader: 'postcss-loader', 
+				options: {
+					sourceMap: true
+				}
+			}]
 		});
 	} else {
-		return ['style-loader', 'css-loader', 'sass-loader'];
+		return ['style-loader', 'css-loader', 'sass-loader', {
+			loader: 'postcss-loader', 
+			options: {
+				sourceMap: true
+			}
+		}];
 	}
 }
 
