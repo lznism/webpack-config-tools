@@ -6,5 +6,6 @@ module.exports = {
     output: require('./__config__/output'),
     plugins: require('./__config__/plugins'),
     resolve: require('./__config__/resolve'),
-    devtool: require('./__config__/devtool')
+    devtool: require('./__config__/devtool'),
+    devServer: require('./__config__/dev-server')
 }
