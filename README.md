@@ -11,6 +11,7 @@
 |sass-loader       |处理sass文件    |2017-09-19|
 |json-loader       |处理json文件    |2017-09-19|
 |url-loader        |处理url文件     |2017-09-19|
+|postcss-loader    |css预处理插件   |2017-09-20|
 
 ### plugins介绍
 
@@ -28,3 +29,4 @@
 | HotModuleReplacementPlugin | 热重载插件 | 2017-09-19 |
 | NoEmitOnErrorsPlugin | 跳过编译时出错的代码并记录插件 | 2017-09-19 |
 | FriendlyErrorsPlugin | 错误提示插件 | 2017-09-19 |
+| autoprefixer | css前缀添加插件 | 2017-09-20 |
