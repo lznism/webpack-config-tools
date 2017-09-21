@@ -30,7 +30,7 @@ const getVueLoaderCfg = () => {
 							options: {
 								minimize: true
 							}
-						}, 'style-loader', {
+						}, {
 							loader: 'postcss-loader', 
 							options: {
 								sourceMap: true
@@ -126,7 +126,13 @@ const babelLoader = () => ({
 
 const imgLoader = () => ({
 	test: /\.(png|jpe?g|gif|svg)$/,
-	use: ['url-loader']
+	use: [{
+		loader: 'url-loader',
+		options: {
+			limit: 8192,
+			name: 'img/[name].[hash:7].[ext]'
+		}
+	}]
 })
 
 const jsonLoader = () => ({
@@ -136,12 +142,24 @@ const jsonLoader = () => ({
 
 const mediaLoader = () => ({
 	test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-    use: ['url-loader']
+    use: [{
+		loader: 'url-loader',
+		options: {
+			limit: 8192,
+			name: 'img/[name].[hash:7].[ext]'
+		}
+	}]
 })
 
 const fontsLoader = () => ({
 	test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    use: ['url-loader']
+    use: [{
+		loader: 'url-loader',
+		options: {
+			limit: 8192,
+			name: 'img/[name].[hash:7].[ext]'
+		}
+	}]
 })
 
 module.exports = {
